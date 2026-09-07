@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans KR", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+  --animate-shake: shake 0.2s ease-in-out 0s 2;
+  --color-entry-blue: #0097FF;
+  --color-entry-green: #59C100;
+  --color-entry-yellow: #FFC000;
+  --color-entry-orange: #FF9F43;
+  --color-entry-sky: #33D6FF;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(0.98); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+body {
+  @apply antialiased;
+  background-color: #FFFDF5; /* Soft light yellow/cream */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD966;
+  border-radius: 10px;
+  border: 2px solid #FFFDF5;
+}
+
+/* Entry Block Style */
+.entry-block {
+  display: inline-block;
+  background-color: #0097FF;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 8px 8px 8px 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 2px;
+  border-bottom: 4px solid rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  transition: all 0.1s;
+  cursor: default;
+  position: relative;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+.entry-block:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.entry-block-event { background: linear-gradient(to bottom, #69b129, #548d21); } /* 시작 (초록) */
+.entry-block-flow  { background: linear-gradient(to bottom, #33b2e2, #298eb5); } /* 흐름 (하늘) */
+.entry-block-move  { background: linear-gradient(to bottom, #a059f5, #8047c4); } /* 움직임 (보라) */
+.entry-block-look  { background: linear-gradient(to bottom, #e64c5a, #b83d48); } /* 생김새 (분홍/빨강) */
+.entry-block-brush { background: linear-gradient(to bottom, #f5a623, #c4851c); } /* 붓 (주황) */
+.entry-block-sound { background: linear-gradient(to bottom, #3eb853, #2e8f40); } /* 소리 (연두초록) ← 수정 */
+.entry-block-judge { background: linear-gradient(to bottom, #5b69e0, #4954b3); } /* 판단 (파랑) */
+.entry-block-calc  { background: linear-gradient(to bottom, #f5a623, #c4851c); } /* 계산 (주황/노랑) ← 수정 */
+.entry-block-data  { background: linear-gradient(to bottom, #d9369e, #ae2b7e); } /* 자료 (자주) */
+
+/* Playful UI Elements */
+.playful-card {
+  @apply bg-white rounded-[2rem] shadow-[0_8px_0_0_rgba(0,0,0,0.05)] border-2 border-slate-100;
+}
+
+.playful-button {
+  @apply transition-all active:translate-y-1 active:shadow-none;
+}
+
+.playful-header {
+  @apply bg-[#CFECF3];
+  background-image: radial-gradient(rgba(255,255,255,0.2) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
